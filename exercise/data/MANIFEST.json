@@ -1,0 +1,16 @@
+{
+  "sessions_per_file": 500,
+  "tick_size": 0.25,
+  "planted_effect_ticks": 26.0,
+  "columns": {
+    "session_date": "the trading date",
+    "regime_sign": "-1 or +1, a state published before the open",
+    "open_ref": "reference price at the open, in index points",
+    "published_level": "a level published before the open, in index points",
+    "session_high": "session high, index points",
+    "session_low": "session low, index points",
+    "close_330": "close of the session, index points",
+    "data_quality": "share of the source that was on time and usable; gate at 0.85"
+  },
+  "note": "One of the two files contains a planted effect and the other does not. The answer is in ANSWER.txt, which you should not open until you have decided."
+}
