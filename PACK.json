@@ -1,0 +1,22 @@
+{
+  "pack_id": "ABD-ONB-R1",
+  "kind": "abdera_candidate_pack/1",
+  "title": "Quantitative Research at Abdera Trading",
+  "subtitle": "What the work looks like, told through one real day of it",
+  "revision": 1,
+  "revision_note": "First release. Twelve chapters, ten figures, runnable code, and a self-contained candidate exercise. Built from the research day of 2026-08-23.",
+  "issued": "2026-08-23",
+  "firm": "Abdera Trading",
+  "audience": "candidates for quantitative research",
+  "repository": "https://github.com/StepanDupac/quant-research-onboarding",
+  "handbook": {
+    "file": "Quant_Research_Handbook.pdf",
+    "pages": 45,
+    "sha256": "4ce374576a5955856060d5f6e271780c580e29e05186a2359dd1678308b9bf51"
+  },
+  "rebuild": [
+    "python3 code/make_figures.py",
+    "python3 build_pdf.py"
+  ],
+  "disclosure": "Live strategy parameters are held back. The trade record carries the calendar year rather than exact session dates. Methods, mathematics, failures and reasoning are as they happened."
+}

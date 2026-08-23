@@ -1,5 +1,7 @@
 # Quantitative Research at Abdera Trading
 
+`ABD-ONB-R1`
+
 **What the work looks like, told through one real day of it.**
 
 This pack exists because "quant researcher" means very different things at different firms, and
@@ -93,5 +95,7 @@ answer was no. It was still the right call.
 methods, the mathematics, the failures and the reasoning are exactly as they happened.*
 
 ---
+
+Pack `ABD-ONB-R1`. Provenance and rebuild instructions: `PACK.json`.
 
 © Abdera Trading. Shared with candidates for assessment purposes.

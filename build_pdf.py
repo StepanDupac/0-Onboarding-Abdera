@@ -28,6 +28,7 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 FIRM = "Abdera Trading"
 TITLE = "Quantitative Research"
 SUBTITLE = "What the work looks like, told through one real day of it"
+PACK_ID = "ABD-ONB-R1"
 
 INK = "#14161a"
 CREAM = "#f4efe4"
@@ -242,6 +243,7 @@ strong {{ font-weight: 600; }}
 .cover .note {{ font-size: 9.8pt; color: #9aa1aa; max-width: 350pt; margin: 0 auto;
                 text-align: left; line-height: 1.6; }}
 .cover .note strong {{ color: {CREAM}; }}
+.cover .packid {{ margin-top: 40pt; font-size: 8.5pt; letter-spacing: 2.5px; color: #6c7480; }}
 
 .toc {{ page-break-after: always; }}
 .toc h1 {{ page-break-before: avoid; }}
@@ -265,7 +267,7 @@ def main() -> int:
         "else.</strong> That is the ordinary shape of the work, which is why this is the pack we "
         "send rather than a success story.</p>"
         "<p>Companion code, figures and a candidate exercise accompany this document.</p>"
-        "</div></div>"
+        f"</div><div class='packid'>{PACK_ID}</div></div>"
     )
 
     sources = sorted(DOCS.glob("*.md"))
