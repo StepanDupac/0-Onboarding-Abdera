@@ -3,8 +3,8 @@
 Self-contained: a small Markdown-to-HTML converter for the subset used in docs/, matplotlib for
 real mathematical typesetting, and headless Chrome for the print. No pandoc, no LaTeX install.
 
-    python3 code/make_figures.py     # once, to build the figures
-    python3 build_pdf.py
+    python3 .source/make_figures.py
+    python3 .source/build_pdf.py
 """
 from __future__ import annotations
 
@@ -16,12 +16,13 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
-DOCS = ROOT / "docs"
-FIGURES = ROOT / "figures"
+SOURCE = Path(__file__).resolve().parent
+PACK = SOURCE.parent
+DOCS = SOURCE / "docs"
+FIGURES = SOURCE / "figures"
 EQUATIONS = FIGURES / "equations"
-LOGO = ROOT / "abdera-logo-v1.png"
-OUTPUT = ROOT / "Quant_Research_Handbook.pdf"
+LOGO = SOURCE / "abdera-logo-v1.png"
+OUTPUT = PACK / "Quant_Research_Handbook.pdf"
 
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
@@ -253,7 +254,7 @@ strong {{ font-weight: 600; }}
 
 def main() -> int:
     if not FIGURES.exists():
-        print("run: python3 code/make_figures.py", file=sys.stderr)
+        print("run: python3 .source/make_figures.py", file=sys.stderr)
         return 1
 
     cover = (
@@ -287,7 +288,7 @@ def main() -> int:
         f"<title>{FIRM} — {TITLE}</title><style>{CSS}</style></head><body>"
         + "\n".join(parts) + "</body></html>"
     )
-    scratch = ROOT / ".handbook.html"
+    scratch = SOURCE / ".handbook.html"
     scratch.write_text(document, encoding="utf-8")
 
     subprocess.run(

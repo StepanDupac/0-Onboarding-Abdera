@@ -19,35 +19,27 @@ shape of the work, and it is why this is the pack we send rather than a success 
 | | |
 |---|---|
 | **`Quant_Research_Handbook.pdf`** | everything below, as one document |
-| `docs/00_overview.md` | the role, the pipeline, and what a result here means |
-| `docs/07_worked_example.md` | **the idea that died** — read this one closely |
-| `docs/08_delivery_example.md` | **the thing that shipped** |
-| `docs/09_preliminary_results.md` | **its equity curve, trade distribution and Monte Carlo** |
+| chapters 8 and 9 | **the idea that died**, and **the thing that shipped** — read these two closely |
+| chapter 10 | its equity curve, trade distribution and Monte Carlo |
 | `exercise/README.md` | a task. If you want to be taken seriously, do it |
 
 If you have twenty minutes, read the overview and the two worked examples. If you have an evening,
 read everything and run the code.
 
-## Contents
+## What is in here
 
 ```
-docs/    00 overview          the role, the pipeline, what a screening result means
-         01 finding an idea   literature, the payer test, writing a falsifiable hypothesis
-         02 mathematics       barrier geometry, the cost hurdle, the model, inference
-         03 data              what we hold, five traps, and how you get data we do not hold
-         04 building          the strategy contract and the tests that catch a broken one
-         05 scaling           preregistration, partitions, controls, kill gates
-         06 promotion         packaging, and how a strategy gets its identity
-         07 worked example 1  dealer gamma, from a practitioner claim to a measured null
-         08 worked example 2  the deliverable, and why it came from an existing mechanism
-         09 results           equity curve, concentration, Monte Carlo, cadence economics
-         10 rejection         what gets work thrown out, with the real failures behind each
-         11 how we work       the rhythm, what you produce, what we provide
-
-code/     runnable implementations of everything in docs/02, /03, /05 and the figures
-figures/  every chart in the handbook, as vector SVG, regenerated from the trade record
-exercise/ a self-contained task with data, and how it is assessed
+Quant_Research_Handbook.pdf   the handbook, 45 pages
+code/                         runnable implementations of the methods it describes
+exercise/                     a self-contained task, its data, and how it is assessed
+PACK.json                     pack identity, revision and provenance
 ```
+
+The handbook itself has twelve chapters: the role and the pipeline; where ideas come from; the
+mathematical framework; the data and how we acquire what we lack; building a strategy and the tests
+that catch a broken one; scaling a test with preregistration and kill gates; packaging and identity;
+**the idea that died**; **the thing that shipped**; its equity curve, concentration and Monte Carlo;
+the catalogue of what gets work thrown out; and how the work actually runs.
 
 ## Running the code
 
@@ -59,13 +51,7 @@ python3 code/gex_math.py          # option chain to a tradeable price level
 python3 code/gates.py             # how we decide whether a difference is real
 python3 code/make_sample_data.py  # generate the exercise dataset
 python3 code/screen.py            # a complete screen, with its controls
-python3 code/make_figures.py      # every figure in the handbook
-python3 build_pdf.py              # rebuild the PDF itself
 ```
-
-The handbook is generated from `docs/` — the mathematics is typeset with matplotlib and the PDF is
-printed by headless Chrome, so there is no LaTeX or pandoc to install. Editing a document and
-re-running `build_pdf.py` is the whole loop.
 
 ## Three things worth knowing before you read
 

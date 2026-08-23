@@ -1,13 +1,14 @@
 """Generate every figure in the handbook, from the real trade record where one exists.
 
-    python3 code/make_figures.py
+    python3 .source/make_figures.py
 
-Writes SVG into figures/. Vector, so it stays sharp in the PDF at any zoom.
+Writes SVG into .source/figures/, which build_pdf.py embeds. Vector, so it stays sharp in the PDF at any zoom.
 """
 from __future__ import annotations
 
 import csv
 import math
+import sys
 from pathlib import Path
 
 import matplotlib
@@ -16,9 +17,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import FuncFormatter
 
-ROOT = Path(__file__).resolve().parents[1]
-FIGURES = ROOT / "figures"
-TRADES = ROOT / "exercise" / "data" / "strategy_trades.csv"
+SOURCE = Path(__file__).resolve().parent
+FIGURES = SOURCE / "figures"
+TRADES = SOURCE / "strategy_trades.csv"
 
 INK = "#14161a"
 CREAM = "#f4efe4"
@@ -163,6 +164,7 @@ def figure_explore_confirm():
 
 
 def figure_gamma_profile():
+    sys.path.insert(0, str(SOURCE.parent / "code"))
     from gex_math import black_scholes_gamma, dealer_signs, flip_level, net_gamma_profile
 
     spot = 5000.0
@@ -378,6 +380,4 @@ def main():
 
 
 if __name__ == "__main__":
-    import sys
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
     main()

@@ -12,11 +12,17 @@
   "handbook": {
     "file": "Quant_Research_Handbook.pdf",
     "pages": 45,
-    "sha256": "4ce374576a5955856060d5f6e271780c580e29e05186a2359dd1678308b9bf51"
+    "sha256": "a25a40631d90579c0f87fdea042fbcc6a23aff714505ad253c331803ac2c2c2a"
   },
   "rebuild": [
-    "python3 code/make_figures.py",
-    "python3 build_pdf.py"
+    "python3 .source/make_figures.py",
+    "python3 .source/build_pdf.py"
   ],
-  "disclosure": "Live strategy parameters are held back. The trade record carries the calendar year rather than exact session dates. Methods, mathematics, failures and reasoning are as they happened."
+  "disclosure": "Live strategy parameters are held back. The trade record carries the calendar year rather than exact session dates. Methods, mathematics, failures and reasoning are as they happened.",
+  "layout": {
+    "Quant_Research_Handbook.pdf": "the handbook, 45 pages",
+    "code/": "runnable teaching implementations; Python and numpy only",
+    "exercise/": "the candidate task, its data and the encoded answer",
+    ".source/": "internal build sources; not part of what candidates receive"
+  }
 }
